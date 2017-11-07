@@ -1,0 +1,38 @@
+apply plugin: 'war'
+apply plugin: 'appengine'
+def appEmail = "raj.sivakumar@full.co"
+def appengineVersion = "1.9.42"
+buildscript { 
+  repositories { 
+      mavenCentral()
+  } 
+  
+  dependencies {
+    classpath "com.google.appengine:gradle-appengine-plugin:1.9.42"
+  }
+}
+repositories {
+  jcenter()
+  mavenCentral()
+}
+dependencies {
+ appengineSdk "com.google.appengine:appengine-java-sdk:${appengineVersion}"
+    providedCompile 'javax.servlet:javax.servlet-api:3.0.1'
+ compile "com.google.appengine:appengine-api-1.0-sdk:${appengineVersion}"
+     testImplementation 'junit:junit:4.12'
+     compile group: 'org.eclipse.jetty', name: 'jetty-servlets', version: '9.4.0.M1'
+     
+}
+
+appengine {
+  httpPort = 8812
+  downloadSdk = true
+appcfg {
+    email = "${appEmail}"
+    oauth2 = true
+  }
+}
+
+   
+sourceCompatibility = JavaVersion.VERSION_1_7  
+targetCompatibility = JavaVersion.VERSION_1_7

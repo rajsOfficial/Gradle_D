@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app>
+
+	<serlvet>
+		<servlet-name>identifier1</servlet-name>
+		<servlet-class>src.main.java.Login.Controller_Servlet</servlet-class>
+	</serlvet>
+	<servlet-mapping>
+		<serlvet-name>identifier1</serlvet-name>
+		<url-pattern>/hello</url-pattern>
+	</servlet-mapping>
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+
+</web-app>
